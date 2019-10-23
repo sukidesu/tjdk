@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>统计打卡</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+</head>
+<body role="document">
+<div class="container theme-showcase" role="main">
+    <div class="col-md-6">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>用户</th>
+                <th>上下班</th>
+                <th>时间</th>
+                <th>按时上班</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${weblists}">
+                <td th:text="${{item.uid}}"></td>
+                <td th:text="${{item.tag}}"></td>
+                <td th:text="${{item.date}}"></td>
+                <td th:text="${{item.inRange}}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>
