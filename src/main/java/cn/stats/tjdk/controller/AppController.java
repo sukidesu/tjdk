@@ -30,7 +30,7 @@ public class AppController {
      * @param password 传入用户password
      * @return 返回success或者fail，String型
      */
-    @PostMapping(value = "/login")
+    @PostMapping(value = "/login2")
     public String login(@RequestParam("uid")String uid, @RequestParam("password")String password){
         User user = new User();
         user.setUid(uid);
@@ -44,7 +44,7 @@ public class AppController {
      * @param tag 传入打卡状态，上午-上班，上午-下班 等等。。。
      * @return 返回打卡是否在范围的判断，YES或者NO，String型
      */
-    @PostMapping(value = "/daka")
+    @PostMapping(value = "/daka2")
     public String daka(@RequestParam("uid")String uid, @RequestParam("tag")String tag){
         return dakaService.daka(uid,tag);
     }
@@ -53,7 +53,7 @@ public class AppController {
      * 查询所有
      * @return Daka记录的对象
      */
-    @GetMapping(value = "/listall")
+    @GetMapping(value = "/listall2")
     public List<Daka> listAll(){
         return queryService.queryALL();
     }
@@ -63,7 +63,7 @@ public class AppController {
      * @param uid 传入用户uid
      * @return 单个用户的打卡记录
      */
-    @PostMapping(value = "/listbyuid")
+    @PostMapping(value = "/listbyuid2")
     public List<Daka> listByUid(@RequestParam("uid") String uid){
         return queryService.quaryByUid(uid);
     }
